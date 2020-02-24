@@ -29,6 +29,11 @@ namespace Xam.Plugin.TabView
                 HeaderIcon = headerIcon;
         }
 
+        public TabItem(string headerText,string subHeaderText, View content, ImageSource headerIcon = null) : this(headerText,content,headerIcon)
+        {
+            SubHeaderText = subHeaderText;
+        }
+
         public static readonly BindableProperty HeaderIconProperty = BindableProperty.Create(nameof(HeaderIcon), typeof(ImageSource), typeof(TabItem));
         public ImageSource HeaderIcon
         {
@@ -48,6 +53,13 @@ namespace Xam.Plugin.TabView
         {
             get => (string)GetValue(HeaderTextProperty);
             set { SetValue(HeaderTextProperty, value); }
+        }
+
+        public static readonly BindableProperty SubHeaderTextProperty = BindableProperty.Create(nameof(SubHeaderText), typeof(string), typeof(TabItem), string.Empty);
+        public string SubHeaderText
+        {
+            get => (string)GetValue(SubHeaderTextProperty);
+            set { SetValue(SubHeaderTextProperty, value); }
         }
 
         public static readonly BindableProperty ContentProperty = BindableProperty.Create(nameof(Content), typeof(View), typeof(TabItem));

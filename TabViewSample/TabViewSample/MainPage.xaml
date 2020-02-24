@@ -1,17 +1,26 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:TabViewSample"
-             xmlns:tabview="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
-             x:Class="TabViewSample.MainPage">
+<ContentPage
+    x:Class="TabViewSample.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:TabViewSample"
+    xmlns:tabview="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView">
     <ContentPage.Content>
         <StackLayout>
-            <tabview:TabViewControl HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" x:Name="theTabView" HeightRequest="500">
+            <tabview:TabViewControl
+                x:Name="theTabView"
+                HeightRequest="500"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand">
                 <tabview:TabViewControl.ItemSource>
-                    <tabview:TabItem HeaderText="First Tab" HeaderIcon="icon.png">
-                        <Image Source="monkey.png" BackgroundColor="SkyBlue" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>
+                    <tabview:TabItem HeaderIcon="icon.png" HeaderText="First Tab">
+                        <Image
+                            Aspect="AspectFit"
+                            BackgroundColor="SkyBlue"
+                            HorizontalOptions="FillAndExpand"
+                            Source="monkey.png" />
                     </tabview:TabItem>
-                    <tabview:TabItem HeaderText="Second Tab">
+                    <tabview:TabItem HeaderText="Second Tab" SubHeaderText="Description">
                         <ListView HorizontalOptions="FillAndExpand">
                             <ListView.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
@@ -26,20 +35,39 @@
                             </ListView.ItemsSource>
                         </ListView>
                     </tabview:TabItem>
-                    <tabview:TabItem HeaderText="Third Tab"  HeaderIcon="icon.png">
-                        <tabview:TabViewControl HorizontalOptions="FillAndExpand" BackgroundColor="Salmon" HeaderBackgroundColor="ForestGreen">
+                    <tabview:TabItem
+                        HeaderIcon="icon.png"
+                        HeaderText="Third Tab"
+                        SubHeaderText="Description">
+                        <tabview:TabViewControl
+                            BackgroundColor="Salmon"
+                            HeaderBackgroundColor="ForestGreen"
+                            HorizontalOptions="FillAndExpand">
                             <tabview:TabViewControl.ItemSource>
                                 <tabview:TabItem HeaderText="Nested Tab 1">
-                                    <Image Source="monkey.png" BackgroundColor="SkyBlue" HorizontalOptions="FillAndExpand" Aspect="AspectFit"/>
+                                    <Image
+                                        Aspect="AspectFit"
+                                        BackgroundColor="SkyBlue"
+                                        HorizontalOptions="FillAndExpand"
+                                        Source="monkey.png" />
                                 </tabview:TabItem>
                                 <tabview:TabItem HeaderText="Nested Tab 2">
                                     <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                        <BoxView VerticalOptions="Center" HorizontalOptions="Center" BackgroundColor="Orange" HeightRequest="40" WidthRequest="40"/>
+                                        <BoxView
+                                            BackgroundColor="Orange"
+                                            HeightRequest="40"
+                                            HorizontalOptions="Center"
+                                            VerticalOptions="Center"
+                                            WidthRequest="40" />
                                     </ContentView>
                                 </tabview:TabItem>
                                 <tabview:TabItem HeaderText="Nested Tab 3">
                                     <ContentView HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
-                                        <Label Text="Xamarin Rocks!" FontSize="Large" VerticalOptions="Center" HorizontalOptions="Center"/>
+                                        <Label
+                                            FontSize="Large"
+                                            HorizontalOptions="Center"
+                                            Text="Xamarin Rocks!"
+                                            VerticalOptions="Center" />
                                     </ContentView>
 
                                 </tabview:TabItem>
@@ -50,20 +78,62 @@
             </tabview:TabViewControl>
             <ScrollView HorizontalOptions="FillAndExpand">
                 <StackLayout Spacing="10">
-                    <Button Text="First" Clicked="Button_First" HorizontalOptions="Start"/>
-                    <Button Text="Previous" Clicked="Button_Previous" HorizontalOptions="Start"/>
-                    <Button Text="Next" Clicked="Button_Next" HorizontalOptions="Start"/>
-                    <Button Text="Last" Clicked="Button_Last" HorizontalOptions="Start"/>
-                    <Button Text="Add Tab" Clicked="Button_AddTab" HorizontalOptions="Start"/>
-                    <Button Text="Remove Last Tab" Clicked="Button_RemoveLastTab" HorizontalOptions="Start"/>
-                    <Button Text="Change header text color" Clicked="Button_ChangeTextColor" HorizontalOptions="Start"/>
-                    <Button Text="Change selection underline color" Clicked="Button_ChangeSelectionUnderlineColor" HorizontalOptions="Start"/>
-                    <Button Text="Change selection underline thickness" Clicked="Button_ChangeSelectionUnderlineThickness" HorizontalOptions="Start"/>
-                    <Button Text="Change selection underline width" Clicked="Button_ChangeSelectionUnderlineWidth" HorizontalOptions="Start"/>
-                    <Button Text="Change tab header text font size" Clicked="Button_ChangeTabTextFontSize" HorizontalOptions="Start"/>
-                    <Button Text="Change tab header text font family" Clicked="Button_ChangeTabTextFontFamily" HorizontalOptions="Start"/>
-                    <Button Text="Change tab header text font attributes" Clicked="Button_ChangeTabTextFontAttributes" HorizontalOptions="Start"/>
-                    <Button Text="Go to Xaml sample page" Clicked="GoToXamlSample" HorizontalOptions="Start" />
+                    <Button
+                        Clicked="Button_First"
+                        HorizontalOptions="Start"
+                        Text="First" />
+                    <Button
+                        Clicked="Button_Previous"
+                        HorizontalOptions="Start"
+                        Text="Previous" />
+                    <Button
+                        Clicked="Button_Next"
+                        HorizontalOptions="Start"
+                        Text="Next" />
+                    <Button
+                        Clicked="Button_Last"
+                        HorizontalOptions="Start"
+                        Text="Last" />
+                    <Button
+                        Clicked="Button_AddTab"
+                        HorizontalOptions="Start"
+                        Text="Add Tab" />
+                    <Button
+                        Clicked="Button_RemoveLastTab"
+                        HorizontalOptions="Start"
+                        Text="Remove Last Tab" />
+                    <Button
+                        Clicked="Button_ChangeTextColor"
+                        HorizontalOptions="Start"
+                        Text="Change header text color" />
+                    <Button
+                        Clicked="Button_ChangeSelectionUnderlineColor"
+                        HorizontalOptions="Start"
+                        Text="Change selection underline color" />
+                    <Button
+                        Clicked="Button_ChangeSelectionUnderlineThickness"
+                        HorizontalOptions="Start"
+                        Text="Change selection underline thickness" />
+                    <Button
+                        Clicked="Button_ChangeSelectionUnderlineWidth"
+                        HorizontalOptions="Start"
+                        Text="Change selection underline width" />
+                    <Button
+                        Clicked="Button_ChangeTabTextFontSize"
+                        HorizontalOptions="Start"
+                        Text="Change tab header text font size" />
+                    <Button
+                        Clicked="Button_ChangeTabTextFontFamily"
+                        HorizontalOptions="Start"
+                        Text="Change tab header text font family" />
+                    <Button
+                        Clicked="Button_ChangeTabTextFontAttributes"
+                        HorizontalOptions="Start"
+                        Text="Change tab header text font attributes" />
+                    <Button
+                        Clicked="GoToXamlSample"
+                        HorizontalOptions="Start"
+                        Text="Go to Xaml sample page" />
                 </StackLayout>
             </ScrollView>
         </StackLayout>

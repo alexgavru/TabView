@@ -1,19 +1,20 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             x:Class="TabViewSample.XamlSamplePage"
-             xmlns:tvs="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView">
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    x:Class="TabViewSample.XamlSamplePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:tvs="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView">
     <ContentPage.Content>
         <tvs:TabViewControl>
             <tvs:TabViewControl.ItemSource>
-                <tvs:TabItem HeaderText="First Tab">
-                    <Button Text="Go back to main page from first page" Clicked="GoBackClicked"/>
+                <tvs:TabItem HeaderText="First Tab" SubHeaderText="Haha 1">
+                    <Button Clicked="GoBackClicked" Text="Go back to main page from first page" />
                 </tvs:TabItem>
-                <tvs:TabItem HeaderText="Second Tab">
-                    <Button Text="Go back to main page from second page" Clicked="GoBackClicked"/>
+                <tvs:TabItem HeaderText="Second Tab" SubHeaderText="Description 2">
+                    <Button Clicked="GoBackClicked" Text="Go back to main page from second page" />
                 </tvs:TabItem>
-                <tvs:TabItem HeaderText="Third Tab">
-                    <Button Text="Go back to main page from third page" Clicked="GoBackClicked"/>
+                <tvs:TabItem HeaderText="Third Tab" SubHeaderText="Description 3">
+                    <Button Clicked="GoBackClicked" Text="Go back to main page from third page" />
                 </tvs:TabItem>
             </tvs:TabViewControl.ItemSource>
         </tvs:TabViewControl>

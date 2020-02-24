@@ -37,7 +37,7 @@ namespace TabViewSample
 
         private void Button_AddTab(object sender, EventArgs e)
         {
-            theTabView.AddTab(new TabItem("New", new Label { Text = "New", HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand, BackgroundColor = Color.Red }));
+            theTabView.AddTab(new TabItem("New", "Description", new Label { Text = "New", HorizontalOptions = LayoutOptions.FillAndExpand, VerticalOptions = LayoutOptions.FillAndExpand, BackgroundColor = Color.Red }));
         }
 
         private void Button_RemoveLastTab(object sender, EventArgs e)

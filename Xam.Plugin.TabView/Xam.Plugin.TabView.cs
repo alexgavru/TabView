@@ -244,6 +244,23 @@ namespace Xam.Plugin.TabView
             headerLabel.SetBinding(Label.FontAttributesProperty, nameof(TabItem.HeaderTabTextFontAttributes));
             headerLabel.SetBinding(IsVisibleProperty, nameof(TabItem.HeaderText), converter: new NullToBoolConverter());
 
+            var subHeaderLabel = new Label
+            {
+                BindingContext = tab,
+                VerticalTextAlignment = TextAlignment.Center,
+                HorizontalTextAlignment = TextAlignment.Center,
+                HorizontalOptions = LayoutOptions.Center,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Margin = new Thickness(0)
+            };
+
+            subHeaderLabel.SetBinding(Label.TextProperty, nameof(TabItem.SubHeaderText));
+            subHeaderLabel.SetBinding(Label.TextColorProperty, nameof(TabItem.HeaderTextColor));
+            subHeaderLabel.SetBinding(Label.FontSizeProperty, nameof(TabItem.HeaderTabTextFontSize));
+            subHeaderLabel.SetBinding(Label.FontFamilyProperty, nameof(TabItem.HeaderTabTextFontFamily));
+            subHeaderLabel.SetBinding(Label.FontAttributesProperty, nameof(TabItem.HeaderTabTextFontAttributes));
+            subHeaderLabel.SetBinding(IsVisibleProperty, nameof(TabItem.SubHeaderText), converter: new NullToBoolConverter());
+
             var selectionBarBoxView = new BoxView
             {
                 VerticalOptions = LayoutOptions.End,
@@ -273,11 +290,18 @@ namespace Xam.Plugin.TabView
                     selectionBarBoxView.HorizontalOptions = tab.HeaderSelectionUnderlineWidth > 0 ? LayoutOptions.CenterAndExpand : LayoutOptions.FillAndExpand;
                 }
             };
-
+            var headerTextSL = new StackLayout 
+            {
+                Spacing = 0,
+                Orientation = StackOrientation.Vertical,
+                VerticalOptions = LayoutOptions.CenterAndExpand,
+                Children = { headerLabel, subHeaderLabel },
+                BackgroundColor = HeaderBackgroundColor
+            };
             var headerItemSL = new StackLayout
             {
                 VerticalOptions = LayoutOptions.FillAndExpand,
-                Children = { headerIcon, headerLabel, selectionBarBoxView },
+                Children = { headerIcon, headerTextSL , selectionBarBoxView },
                 BackgroundColor = HeaderBackgroundColor,
                 Spacing = 0
             };
